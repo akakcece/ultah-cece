@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPESIAL BUAT CECE❤️</title>
+  <title>Spesial Buat Cece ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -38,6 +38,7 @@
     p { text-align:center; line-height:1.6; }
     .heart { font-size:36px; text-align:center; animation:beat 1s infinite; }
     @keyframes beat { 50%{ transform:scale(1.2);} }
+    @keyframes fadeIn { from{opacity:0; transform:scale(.95);} to{opacity:1; transform:scale(1);} }
 
     @keyframes confettiFall {
       0% { transform: translateY(-100vh) rotate(0deg); }
@@ -51,61 +52,57 @@
 </head>
 <body>
 
-<audio id="bgMusic" preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c1c0b3a4e.mp3?filename=romantic-piano-112191.mp3" type="audio/mpeg">
+<!-- MUSIK ROMANTIS PIXABAY -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7c1c0b3a4e.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PAGE 1 LOGIN -->
 <div class="card" id="page1">
   <h1 class="title">Welcome</h1>
-  <p>Ini khusus untuk kecintaannya akak❤️</p>
-  <input id="user" placeholder="nama sayang-sayang" />
-  <input id="pass" type="password" placeholder="isi terserah jo sayang" />
-  <button id="loginBtn">LOGIN</button>
+  <p>Ini khusus untuk orang spesial ❤️</p>
+  <input id="user" placeholder="Nama panggilan" />
+  <input id="pass" type="password" placeholder="Isi apa saja" />
+  <button onclick="login()">LOGIN</button>
 </div>
 
 <!-- PAGE 2 -->
 <div class="card hidden" id="page2">
   <h2 class="title">Hai <span id="displayName"></span> 🌸</h2>
-  <p>Ada sesuatu yang mau akak tunjukkan ke cece…</p>
+  <p>Ada sesuatu yang mau akak tunjukkan…</p>
   <div class="heart">❤️</div>
-  <button onclick="nextPage(3)">KLIK OYYY</button>
+  <button onclick="nextPage(3)">Klik dong</button>
 </div>
 
 <!-- PAGE 3 -->
 <div class="card hidden" id="page3">
   <h2 class="title">26 Tahun</h2>
-  <p>Hari ini cece genap 26 tahun. Terima kasih sudah jadi versi terbaik dari diri cece.</p>
-  <button onclick="nextPage(4)">Klik lagi oyy💕</button>
+  <p>Hari ini cece genap 26 tahun. Terima kasih sudah selalu jadi diri sendiri.</p>
+  <button onclick="nextPage(4)">Lanjut</button>
 </div>
 
 <!-- PAGE 4 -->
 <div class="card hidden" id="page4">
   <h2 class="title">Untuk Cece</h2>
-  <p>Akak bangga punya cece, hari ini dan seterusnya.</p>
-  <button onclick="nextPage(5)">Masih ada lagi</button>
+  <p>Akak bangga punya cece. Semoga semua mimpi cece tercapai.</p>
+  <button onclick="nextPage(5)">Satu lagi</button>
 </div>
 
 <!-- PAGE 5 -->
 <div class="card hidden" id="page5">
   <h2 class="title">Happy Birthday ❤️</h2>
   <div class="heart">💖</div>
-  <p>Aakak sayang ti ecee, selalu dan selamanya.</p>
+  <p>Akak sayang cece, hari ini, besok, dan seterusnya.</p>
   <button onclick="exitPage()" style="background:#333">dah gitu doang sayang</button>
 </div>
 
 <script>
-// ===== SAFE & CLEAN SCRIPT =====
-
-const loginBtn = document.getElementById('loginBtn');
-
-loginBtn.addEventListener('click', login);
-
+// ===== SCRIPT UTAMA =====
 function login() {
   const name = document.getElementById('user').value.trim();
   const pass = document.getElementById('pass').value.trim();
 
-  if (name === '' || pass === '') {
+  if (!name || !pass) {
     alert('Isi dulu ya sayang ❤️');
     return;
   }
@@ -141,24 +138,10 @@ function createConfetti() {
 }
 
 function exitPage() {
-  alert('Makasih sudah baca sampai habis ya sayang ❤️');
+  alert('Makasih sudah buka sampai habis ❤️');
   window.close();
 }
 </script>
 
-<!-- AUDIO START -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_7b0c3c8d3c.mp3" type="audio/mpeg">
-</audio>
-<script>
-  function playMusic() {
-    const music = document.getElementById('bgMusic');
-    if (music) {
-      music.volume = 0.5;
-      music.play().catch(()=>{});
-    }
-  }
-</script>
-<!-- AUDIO END -->
 </body>
 </html>
